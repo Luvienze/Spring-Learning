@@ -18,8 +18,9 @@ public class DemoController {
         myCoach = theCoach;
     }*/
 
+    // Originally it was set method but because of it is autowired, spring understand the injection
     @Autowired
-    public void setMyCoach(Coach theCoach){
+    public void doSomeStuff(Coach theCoach){
         myCoach = theCoach;
     }
 
