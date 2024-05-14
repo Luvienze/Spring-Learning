@@ -13,8 +13,13 @@ public class DemoController {
 
     // define constructor for dependency injection
 
-    @Autowired
+    /* @Autowired
     public DemoController(Coach theCoach){
+        myCoach = theCoach;
+    }*/
+
+    @Autowired
+    public void setMyCoach(Coach theCoach){
         myCoach = theCoach;
     }
 
@@ -22,6 +27,8 @@ public class DemoController {
     public String getDailyWorkout(){
         return myCoach.getDailyWorkout();
     }
+
+
 
 }
 
