@@ -1,4 +1,4 @@
-package com.luvienze.springcoredemo;
+package com.luvienze.springcoredemo.common;
 
 public interface Coach {
     String getDailyWorkout();
