@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class DemoController {
-    // define private field for depeendency
+    // define private field for depeendencyd
 
     private Coach myCoach;
 
