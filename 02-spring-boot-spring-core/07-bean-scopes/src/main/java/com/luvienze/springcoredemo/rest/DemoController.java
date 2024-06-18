@@ -12,12 +12,18 @@ public class DemoController {
 
     private Coach myCoach;
 
+    private Coach anotherCoach;
+
     // define constructor for dependency injection
 
+    //default scope is singleton
     @Autowired
-    public DemoController(@Qualifier("cricketCoach") Coach theCoach){
+    public DemoController
+            (@Qualifier("cricketCoach") Coach theCoach,
+             @Qualifier("anotherCoach") Coach theAnotherCoach){
         System.out.println("In constructor: " + getClass().getSimpleName());
         myCoach = theCoach;
+        anotherCoach = theAnotherCoach;
     }
 
     @GetMapping("/dailyworkout")
