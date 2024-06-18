@@ -8,7 +8,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SportConfig {
 
-    @Bean
+    //by default the bean id is swimCoach
+    //when use brackets, we create custom beanid
+    @Bean("aquatic")
     public Coach swimCoach(){
         return new SwimCoach();
     }
