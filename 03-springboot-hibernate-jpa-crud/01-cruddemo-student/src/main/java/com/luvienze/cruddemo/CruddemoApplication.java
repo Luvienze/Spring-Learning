@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.util.List;
 
 
 @SpringBootApplication
@@ -22,31 +23,43 @@ public class CruddemoApplication {
 		return runner ->{
 			// createStudent(studentDao);
 			// createMultipleStudent (studentDao);
+			// readStudent(studentDao);
 			
-			readStudent(studentDao);
-
-			// create a student object
-			System.out.println("Creating new student object ...");
-			Student tempStudent = new Student("Daffy","Duck", "daffy@gmail.com");
-
-			// save the student
-			System.out.println("Saving the student ...");
-			studentDao.save(tempStudent);
-
-			// display id of the saved student
-			int theId = tempStudent.getId();
-			System.out.println("Saved the student. Generated id: "+ theId);
-
-			// retrieve student based on the id: primary key
-			System.out.println("Retrieving student with id: " + theId);
-			Student myStudent = studentDao.findById(theId);
-
-			// display the student
-			System.out.println("Found the student: " + myStudent);
+			queryForStudents (studentDao); 
+			
 		};
 	}
 
+	private void queryForStudents(StudentDao studentDao) {
+
+		// get a list of students
+		List<Student> theStudents = studentDao.findAll();
+
+		// display list of students
+		for (Student tempStudent : theStudents){
+			System.out.println(tempStudent);
+		}
+	}
+
 	private void readStudent(StudentDao studentDao) {
+		// create a student object
+		System.out.println("Creating new student object ...");
+		Student tempStudent = new Student("Daffy","Duck", "daffy@gmail.com");
+
+		// save the student
+		System.out.println("Saving the student ...");
+		studentDao.save(tempStudent);
+
+		// display id of the saved student
+		int theId = tempStudent.getId();
+		System.out.println("Saved the student. Generated id: "+ theId);
+
+		// retrieve student based on the id: primary key
+		System.out.println("Retrieving student with id: " + theId);
+		Student myStudent = studentDao.findById(theId);
+
+		// display the student
+		System.out.println("Found the student: " + myStudent);
 	}
 
 	private void createMultipleStudent(StudentDao studentDao) {
