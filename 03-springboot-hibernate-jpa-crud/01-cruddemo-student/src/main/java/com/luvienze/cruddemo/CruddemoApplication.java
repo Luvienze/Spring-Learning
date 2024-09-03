@@ -1,5 +1,6 @@
 package com.luvienze.cruddemo;
 
+import ch.qos.logback.core.joran.spi.NoAutoStartUtil;
 import com.luvienze.cruddemo.dao.StudentDao;
 import com.luvienze.cruddemo.entity.Student;
 import org.springframework.boot.CommandLineRunner;
@@ -23,6 +24,25 @@ public class CruddemoApplication {
 			// createMultipleStudent (studentDao);
 			
 			readStudent(studentDao);
+
+			// create a student object
+			System.out.println("Creating new student object ...");
+			Student tempStudent = new Student("Daffy","Duck", "daffy@gmail.com");
+
+			// save the student
+			System.out.println("Saving the student ...");
+			studentDao.save(tempStudent);
+
+			// display id of the saved student
+			int theId = tempStudent.getId();
+			System.out.println("Saved the student. Generated id: "+ theId);
+
+			// retrieve student based on the id: primary key
+			System.out.println("Retrieving student with id: " + theId);
+			Student myStudent = studentDao.findById(theId);
+
+			// display the student
+			System.out.println("Found the student: " + myStudent);
 		};
 	}
 
