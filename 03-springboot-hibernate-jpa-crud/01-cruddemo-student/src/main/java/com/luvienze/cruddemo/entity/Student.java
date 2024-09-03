@@ -20,7 +20,7 @@ public class Student {
     private String lastName;
 
     @Column (name = "email")
-    private String emai;
+    private String email;
 
 
     // define constructors
@@ -32,7 +32,7 @@ public class Student {
     public Student(String firstName, String lastName, String emai) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.emai = emai;
+        this.email = emai;
     }
 
     // define getters/setters
@@ -53,12 +53,12 @@ public class Student {
         this.lastName = lastName;
     }
 
-    public String getEmai() {
-        return emai;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmai(String emai) {
-        this.emai = emai;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public int getId() {
@@ -79,7 +79,7 @@ public class Student {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", emai='" + emai + '\'' +
+                ", email='" + email + '\'' +
                 '}';
     }
 }
