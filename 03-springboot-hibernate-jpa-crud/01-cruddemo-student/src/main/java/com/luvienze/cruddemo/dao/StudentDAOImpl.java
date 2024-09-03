@@ -28,6 +28,6 @@ public class StudentDAOImpl implements StudentDao{
 
     @Override
     public Student findById(Integer id) {
-        return null;
+        return entityManager.find(Student.class, id);
     }
 }
