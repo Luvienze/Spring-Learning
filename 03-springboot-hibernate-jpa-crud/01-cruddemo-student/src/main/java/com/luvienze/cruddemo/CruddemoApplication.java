@@ -20,8 +20,13 @@ public class CruddemoApplication {
 	{
 		return runner ->{
 			// createStudent(studentDao);
-			createMultipleStudent (studentDao);
+			// createMultipleStudent (studentDao);
+			
+			readStudent(studentDao);
 		};
+	}
+
+	private void readStudent(StudentDao studentDao) {
 	}
 
 	private void createMultipleStudent(StudentDao studentDao) {
