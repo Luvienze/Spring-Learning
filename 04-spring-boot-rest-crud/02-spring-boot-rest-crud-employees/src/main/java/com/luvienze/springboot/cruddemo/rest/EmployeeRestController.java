@@ -4,10 +4,7 @@ import com.luvienze.springboot.cruddemo.dao.EmployeeDAO;
 import com.luvienze.springboot.cruddemo.entity.Employee;
 import com.luvienze.springboot.cruddemo.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -40,4 +37,29 @@ public class EmployeeRestController{
 
         return theEmployee;
     }
+
+    // add mapping for POST /employees - add new employee
+    @PostMapping("/employees")
+    public Employee addEmployee(@RequestBody Employee theEmployee){
+
+        // also just in case they pass an id in JSON ... set id to 0
+        // this is to force a save of new item ... instead of update
+
+        theEmployee.setId(0);
+
+        Employee dbEmployee = employeeService.save(theEmployee);
+
+        return  dbEmployee;
+    }
+
+    // add mapping for PUT /employees - update existing employee
+    @PutMapping("employees")
+    public Employee updateEmployee(@RequestBody Employee theEmployee){
+
+        Employee dbEmployee = employeeService.save(theEmployee);
+
+        return dbEmployee;
+
+    }
+
 }
