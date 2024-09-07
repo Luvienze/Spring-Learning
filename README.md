@@ -1,6 +1,6 @@
 # Spring Learning
 
-Hey, I’m learning Spring Boot through the "Spring Boot 3, Spring 6 & Hibernate for Beginners" course on Udemy, taught by Chad Darby. 
+Hey, I’m learning Spring Boot through the"Spring Boot 3, Spring 6 & Hibernate for Beginners" course on Udemy, taught by Chad Darby. 
 In this course, we will dive into various topics including Spring Boot, Maven and dependencies, Actuator, dependency injection, Hibernate, JPA, REST API, REST Security,
 Spring Boot MVC, MVC Security, Thymeleaf, advanced Hibernate mappings, AOP, and more. To enhance my Spring knowledge, 
 I’ll also be using other resources such as the official Spring website, Baeldung, GeeksforGeeks, and others. I’ll be sharing my knowledge on both GitHub and Medium.
