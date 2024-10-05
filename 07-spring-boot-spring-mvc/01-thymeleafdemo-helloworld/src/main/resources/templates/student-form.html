@@ -26,6 +26,15 @@
         <option th:each="tempCountry : ${countries}" th:value="${tempCountry}" th:text="${tempCountry}"></option>
     </select>
 
+    <br><br>
+
+    Favorite Programming Language:
+    <input type="radio" th:field="*{favoriteLangauge}" th:value="Go">Go</input>
+    <input type="radio" th:field="*{favoriteLangauge}" th:value="Java">Java</input>
+    <input type="radio" th:field="*{favoriteLangauge}" th:value="Python">Python</input>
+
+    <br><br>
+
     <input type="submit" value="Submit"/>
 </form>
 </body>
