@@ -1,5 +1,6 @@
 package com.luvienze.springdemo.mvc;
 
+import com.luvienze.springdemo.mvc.validation.CourseCode;
 import jakarta.validation.constraints.*;
 
 public class Customer {
@@ -16,6 +17,17 @@ public class Customer {
     private Integer freePasses;
 
     private String postalCode;
+
+    @CourseCode
+    private String courseCode;
+
+    public String getCourseCode() {
+        return courseCode;
+    }
+
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
+    }
 
     @Pattern(regexp = "^[a-zA-Z0-9]{5}",message = "only 5 chars/digits")
     public String getPostalCode() {
