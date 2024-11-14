@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xlmns="http://thymeleaf.org" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Luvienze Company Home Page</title>
@@ -8,6 +8,14 @@
 
     <h2>Luvienze Company Home Page - Yohoo! - Silly Goose!</h2>
     <hr>
-    Welcome to the Luvienze company home page!
+    <p>
+        Welcome to the Luvienze company home page!
+    </p>
+
+    <!-- Add a logout button -->
+    <form action="#" th:action="@{/logout}" method="POST">
+     <input type="submit" value="Logout"/>
+    </form>
+
 </body>
 </html>
