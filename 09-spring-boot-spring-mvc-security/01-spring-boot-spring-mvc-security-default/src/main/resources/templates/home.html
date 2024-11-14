@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xlmns="http://thymeleaf.org" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xlmns="http://thymeleaf.org"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Luvienze Company Home Page</title>
@@ -10,6 +12,15 @@
     <hr>
     <p>
         Welcome to the Luvienze company home page!
+    </p>
+
+    <hr>
+
+    <!-- display user name and role -->
+    <p>
+        User: <span sec:authentication="principal.username"> </span>
+        <br><br>
+        Role(s): <span sec:authentication="principal.authorities"></span>
     </p>
 
     <!-- Add a logout button -->
