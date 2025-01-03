@@ -23,8 +23,37 @@ public class CruddemoApplication {
 
 			// findInstructor(appDAO);
 
-			removeInstructor(appDAO);
+			// removeInstructor(appDAO);
+
+			// findInstructorDetail(appDAO);
+
+			 deleteInstructorDetail(appDAO);
 		};
+	}
+
+	private void deleteInstructorDetail(AppDAO appDAO) {
+		int theId = 3;
+		System.out.println("Deleting instructor detail id: " + theId);
+
+		appDAO.deleteInstructorDetailById(theId);
+
+		System.out.println("Done!");
+	}
+
+	private void findInstructorDetail(AppDAO appDAO) {
+
+		// get the instructor detail object
+		int theId = 2;
+		InstructorDetail tempInstructorDetail = appDAO.findInstructorDetailById(theId);
+
+		// print the instructor detail
+		System.out.println("tempInstructorDetail: " + tempInstructorDetail);
+
+		// print the associated instructor
+		System.out.println("the associated instructor: " + tempInstructorDetail.getInstructor());
+
+		System.out.println("Done!");
+
 	}
 
 	private void removeInstructor(AppDAO appDAO) {
@@ -50,23 +79,23 @@ public class CruddemoApplication {
 
 	private void createInstructor(AppDAO appDAO) {
 
-//		// create the instructor
-//		Instructor tempInstructor = new Instructor("Chad","Darby","darby@luv2code.com");
-//
-//		// create the instructor detail
-//
-//		InstructorDetail tempInstructorDetail =
-//				new InstructorDetail("http://www.luv2code.com/youtube",
-//						"Luv 2 code!!!");
-
 		// create the instructor
-		Instructor tempInstructor = new Instructor("Madhu","Patel","madhu@luv2code.com");
+		Instructor tempInstructor = new Instructor("Chad","Darby","darby@luv2code.com");
 
 		// create the instructor detail
 
 		InstructorDetail tempInstructorDetail =
 				new InstructorDetail("http://www.luv2code.com/youtube",
-						"Guitar");
+					"Luv 2 code!!!");
+
+//		// create the instructor
+//		Instructor tempInstructor = new Instructor("Madhu","Patel","madhu@luv2code.com");
+//
+//		// create the instructor detail
+//
+//		InstructorDetail tempInstructorDetail =
+//				new InstructorDetail("http://www.luv2code.com/youtube",
+//						"Guitar");
 
 
 		// associate the objects
